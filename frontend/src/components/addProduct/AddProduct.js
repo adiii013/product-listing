@@ -8,7 +8,6 @@ function AddProduct() {
     React.useEffect(() => {
       window.addEventListener("resize", () => setWidth(window.innerWidth));
     }, []);
-  console.log(width);
     
     return width < breakpoint ? <AddProductMobile /> : <AddProductDesktop/>;
 }

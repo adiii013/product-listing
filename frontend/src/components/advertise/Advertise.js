@@ -8,7 +8,6 @@ function Advertise() {
     React.useEffect(() => {
       window.addEventListener("resize", () => setWidth(window.innerWidth));
     }, []);
-  console.log(width);
     
     return width < breakpoint ? <AdvertiseMobile /> : <AdvertiseDesktop />;
 }

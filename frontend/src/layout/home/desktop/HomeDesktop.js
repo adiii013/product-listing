@@ -6,7 +6,6 @@ import Filter from '../../../components/filter/Filter'
 import AddProduct from '../../../components/addProduct/AddProduct'
 import ProductList from '../../../components/productList/ProductList'
 
-
 function HomeDesktop() {
   return (
     <div className="home__container__dk">

@@ -7,9 +7,7 @@ function ProductList() {
     const breakpoint = 650;
     React.useEffect(() => {
       window.addEventListener("resize", () => setWidth(window.innerWidth));
-    }, []);
-  console.log(width);
-    
+    }, []);    
     return width < breakpoint ? <ProductListMobile/> : <ProductListDesktop />;
 }
 
