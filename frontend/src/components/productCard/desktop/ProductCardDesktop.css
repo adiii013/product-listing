@@ -1,0 +1,73 @@
+.product__card__container__dk{
+    width: 1000px;
+    min-height: 157px;
+    background: rgba(54, 65, 106, 0.15);
+    border-radius: 4px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.product__card__logo__dk{
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    border-radius: 49.4458px;
+    left: 50px;
+    top: 30px;
+}
+
+.product__card__details{
+    position: absolute;
+    left: 150px;
+    width: 100vb;
+    top: 0;
+}
+
+.product__name{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    margin: 0;
+    font-size: 35px;
+}
+
+.product__description{
+    position: absolute;
+    top: 55px;
+    font-size: 15px;
+}
+
+.product__upvote{
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+
+
+.product__tag__comment{
+    display: flex;
+    position: absolute;
+    top: 95px;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.upvote{
+    width: 46.89px;
+    height: 65px;
+    background: #C7CBD6;
+    border-radius: 15.9836px;
+    margin-top: 20px;
+}
+
+.upvote > p{
+    margin: 0;
+}
+
+.comment__box{
+    width: 1000px;
+    max-height: 304px;
+    overflow: scroll;
+    background: #E1E3E9;
+    border-radius: 0px 0px 4px 4px;  
+}

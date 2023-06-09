@@ -1,0 +1,41 @@
+.filter__item{
+    background: #D9D9D9;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.add__product__container__dk{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 68px;
+    background: #FFFFFF;
+    border: 3px solid rgba(54, 65, 106, 0.35);
+    border-radius: 8px;
+    z-index: 50;
+    position: sticky;
+    top: 10px;
+}
+
+.add__product__subcontainer__dk{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.sort__by{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+}
+
+.add__product{
+    width: 211px;
+    height: 46px;
+    color: white;
+    background: #36416A;
+    border-radius: 7px;
+    margin-right: 20px;
+}
