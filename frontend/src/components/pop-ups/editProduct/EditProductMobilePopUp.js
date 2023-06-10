@@ -70,7 +70,7 @@ function EditProductPopUp({name,tag,description,id}) {
             if(!loading){
             close();
             }
-          }}>{(loading)? <Loading/> :'+Add'}</button>
+          }}>{(loading)? <Loading/> :'Edit'}</button>
         </div>
       </div>
     }
