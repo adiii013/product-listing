@@ -64,8 +64,44 @@
     width: 130px;
     height: 40.19px;
     color: white;
-    margin-left: 300px;
     background: #36416A;
     border-radius: 27.907px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.edit__button{
+    width: 100px;
+    height: 35.19px;
+    color: white;
+    background: #36416A;
+    border-radius: 10.907px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edit__button__mb{
+    width: 70px;
+    height: 35.19px;
+    color: white;
+    background: #36416A;
+    border-radius: 10.907px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login__button{
+    width: 130px;
+    height: 40.19px;
+    color: white;
+    background: #36416A;
+    border-radius: 27.907px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .login__form__container{
+        width: 350px;
+    }
+}

@@ -39,7 +39,7 @@ function Login() {
                 const userData = {
                     email:response.data.email,
                     name:response.data.name,
-                    id:response.data._id,
+                    id:response.data.user_id,
                     login:true,
                 }
                 dispatch(Authorization(userData))

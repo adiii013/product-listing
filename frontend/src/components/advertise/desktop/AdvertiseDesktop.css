@@ -5,12 +5,12 @@
 }
 
 .advertise__image__dk{
-    width: 400px;
-    margin-left: 80px;
+    width: 30%;
 }
 
 .advertise__text__dk{
     display: flex;
+    width: 40%;
     flex-direction: column;
     justify-content: center;
     margin-right: 80px;
@@ -29,12 +29,10 @@
 .advertise__text__main__dk{
 font-style: normal;
 font-weight: 500;
-width: 900px;
 font-size: 40.5132px;
 line-height: 147.2%;
 }
 
 .advertise__text__sub__dk{
     font-size: 20px;
-    width: 900px;
 }

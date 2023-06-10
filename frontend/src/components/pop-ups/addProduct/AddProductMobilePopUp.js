@@ -7,7 +7,7 @@ import axios from 'axios'
 import Loading from '../../loading/Loading'
 import { AddProduct } from '../../../features/productSlice';
 
-function AddProductPopUp() {
+function AddProductMobilePopUp() {
   const dispatch = useDispatch()
     const [loading,setLoading] = useState(false);
     const [product,setProduct] = useState({
@@ -53,7 +53,7 @@ function AddProductPopUp() {
     >
     {close =>
       <div className="add__product__popup__container">
-        <div className="left__container__addproduct__popup">
+        <div className="left__container__addproduct__popup__mb">
           <p>Add your product</p>
           <input type="text" name='name' onChange={onChangeInput} placeholder='Name of Product' />
           <select name="tag" onChange={onChangeInput}>
@@ -74,10 +74,6 @@ function AddProductPopUp() {
             }
           }}>{(loading)? <Loading/> :'+Add'}</button>
         </div>
-        <div className="right__container__addproduct__popup">
-            <p>Feedback</p>
-            <article>Add your product and rate other items.............</article>
-        </div>
       </div>
     }
     </Popup>
@@ -85,4 +81,4 @@ function AddProductPopUp() {
     
 }
 
-export default AddProductPopUp
+export default AddProductMobilePopUp

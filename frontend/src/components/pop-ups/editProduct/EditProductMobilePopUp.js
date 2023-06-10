@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import './AddProductPopUp.css'
 import {useDispatch} from 'react-redux'
 import axios from 'axios'
 import Loading from '../../loading/Loading'
-import { AddProduct } from '../../../features/productSlice';
+import {  EditProduct } from '../../../features/productSlice';
 
-function AddProductPopUp() {
+function EditProductPopUp({name,tag,description,id}) {
   const dispatch = useDispatch()
     const [loading,setLoading] = useState(false);
     const [product,setProduct] = useState({
-        name:'',
-        tag:'Fintech',
-        description:'',
+        name:name,
+        tag:tag,
+        description:description,
       })
     
       const onChangeInput = e =>{
@@ -26,7 +25,7 @@ function AddProductPopUp() {
         console.log(product);
         const token = localStorage.getItem('token');
         try{
-            const response = await axios.post('https://product-listing-40mx.onrender.com/product',product,{
+            const response = await axios.put(`https://product-listing-40mx.onrender.com/product/${id}`,product,{
               headers:{
                 'Authorization':token
               }
@@ -35,8 +34,7 @@ function AddProductPopUp() {
                 console.log(response.data.msg);
             }
             else{
-                const product = response.data.Product;
-                dispatch(AddProduct({product:product}));
+                dispatch(EditProduct({name:product.name,description:product.description,tag:product.tag,id:id}));
             }
             setLoading(false)
         }catch(e){
@@ -47,16 +45,16 @@ function AddProductPopUp() {
   return (
     
     <Popup
-      trigger={<button className="button add__product">+ Add Product</button>}
+      trigger={<button className="button edit__button__mb">Edit</button>}
       modal
       nested
     >
     {close =>
       <div className="add__product__popup__container">
-        <div className="left__container__addproduct__popup">
-          <p>Add your product</p>
-          <input type="text" name='name' onChange={onChangeInput} placeholder='Name of Product' />
-          <select name="tag" onChange={onChangeInput}>
+        <div className="left__container__addproduct__popup__mb">
+          <p>Edit your product</p>
+          <input type="text" name='name' value={product.name} onChange={onChangeInput} placeholder='Name of Product' />
+          <select name="tag" value={product.tag} onChange={onChangeInput}>
                             <option value="Fintech">Fintech</option>
                             <option value="Edtech">Edtech</option>
                             <option value="B2B">B2B</option>
@@ -66,17 +64,13 @@ function AddProductPopUp() {
                         </select>
           <input type="text" name='logourl' placeholder='Add Logo url' />
           <input type="text" name='link' placeholder='Link of Product' />
-          <input type="text" name='description' onChange={onChangeInput} placeholder='Add Description' />
+          <input type="text" name='description' value={product.description} onChange={onChangeInput} placeholder='Add Description' />
           <button onClick={()=>{
             submitData();
             if(!loading){
             close();
             }
           }}>{(loading)? <Loading/> :'+Add'}</button>
-        </div>
-        <div className="right__container__addproduct__popup">
-            <p>Feedback</p>
-            <article>Add your product and rate other items.............</article>
         </div>
       </div>
     }
@@ -85,4 +79,4 @@ function AddProductPopUp() {
     
 }
 
-export default AddProductPopUp
+export default EditProductPopUp
