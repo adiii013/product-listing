@@ -61,7 +61,7 @@ function App() {
     <div className="App">
       {
         (loading) ? <div className="loading__container__homepage">
-          <p style={{ fontSize: "20px", marginTop: "50px" }}>Feedback</p>
+          <p style={{ fontSize: "20px", marginTop: "50px" }}>Product Listing</p>
           <Loading /> </div> :
           <>
             <div id="popup-root" />

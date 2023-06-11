@@ -86,8 +86,7 @@
     color: white;
     background: #36416A;
     border-radius: 10.907px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
 }
 
 .login__button{

@@ -6,6 +6,9 @@ import {BsFillPersonFill,BsPhone} from 'react-icons/bs'
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
+import { Authorization } from '../../features/userSlice'
+import { toast } from 'react-toastify'
+import Loading from '../../components/loading/Loading'
 
 function Signup() {
     const dispatch = useDispatch()
@@ -28,12 +31,28 @@ function Signup() {
         setLoading(true)
         console.log(user);
         try{
-            const response = await axios.post('https://product-listing-40mx.onrender.com/user/register',user);
-            if(response.data.success === 'false'){
-                console.log(response.data.msg);
+            const response1 = await axios.post('https://product-listing-40mx.onrender.com/user/register',user);
+            const user1 = {
+                email:user.email,
+                password:user.password
+            }
+            const response = await axios.post('https://product-listing-40mx.onrender.com/user/login',user1);
+            if(response1.data.success === 'false'){
+                toast.error(response1.data.msg,{
+                    position: toast.POSITION.TOP_CENTER
+                })
             }
             else{
-                navigate('/login',{replace:true})
+                const token = response.data.token;
+                localStorage.setItem("token",token);
+                const userData = {
+                    email:response.data.email,
+                    name:response.data.name,
+                    id:response.data.user_id,
+                    login:true,
+                }
+                dispatch(Authorization(userData))
+                navigate('/',{replace:true})
             }
             setLoading(false)
         }catch(e){
@@ -64,7 +83,7 @@ function Signup() {
                         <input type="text" name='password' onChange={onChangeInput} placeholder='Password' />
                     </div>
                     <p>Already have an account ? <Link to='/login' >Login</Link></p>
-                    <button>Signup</button>
+                    <button>{ (loading) ? <Loading/> : <p>Signup</p>}</button>
                 </form>
             </div>
         </div>
