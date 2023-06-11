@@ -34,9 +34,9 @@ function Header() {
       <p>Feedback</p>
       <div className="header__subcontainer">
         {
-          (login) ? <><div onClick={logOut}><p>Logout</p></div>
+          (login) ? <><div className='login__signup' onClick={logOut}><p>Logout</p></div>
             <p>Hello</p>
-            <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=2000" className='header__subcontainer__logo' alt="" /></> :<> <div onClick={loginUser}> <p> Login</p></div><div onClick={signUpUser}> <p> Signup</p></div></>
+            <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=2000" className='header__subcontainer__logo' alt="" /></> :<> <div className='login__signup' onClick={loginUser}> <p> Login</p></div><div onClick={signUpUser}> <p> Signup</p></div></>
         }
       </div>
     </div>

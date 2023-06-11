@@ -24,3 +24,7 @@
     height: 30px;
     border-radius: 100%;
 }
+
+.login__signup{
+    cursor: pointer;
+}

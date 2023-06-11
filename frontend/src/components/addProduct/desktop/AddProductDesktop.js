@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './AddProductDesktop.css'
 import AddProductPopUp from '../../pop-ups/addProduct/AddProductPopUp'
 import 'reactjs-popup/dist/index.css';
@@ -11,10 +11,8 @@ function AddProductDesktop() {
   const login = useSelector(state => state.user.login)
   const suggestions = useSelector(state=>state.product.suggestions);
   const dispatch = useDispatch()
-  const [feature,setFeature] = useState('comment');
 
   const onChangeFeature=(e)=>{
-    setFeature(e.target.value);
     dispatch(SortByComment({feature:e.target.value}));
   }
   

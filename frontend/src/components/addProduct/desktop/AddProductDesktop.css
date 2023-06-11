@@ -28,7 +28,6 @@
 .sort__by__dk{
     display: flex;
     flex-direction: row;
-    height: 30px;
     align-items: center;
 }
 
